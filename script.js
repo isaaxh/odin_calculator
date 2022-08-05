@@ -105,4 +105,6 @@ deleteButton.addEventListener('click',() => {
     updateDisplay();
 })
 
+
+
 window.onload = clear();

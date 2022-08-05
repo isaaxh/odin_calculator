@@ -4,6 +4,7 @@ Objectives of this project:
 
 - create a functioning simple calculator
 - It must include basic arithmatic operations
+- It must have keyboard support
 
 What I have learned by completing this project:
 
