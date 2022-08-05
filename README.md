@@ -6,3 +6,9 @@ Objectives of this project:
 - It must include basic arithmatic operations
 
 What I have learned by completing this project:
+
+- How to use switch statement
+- How to code math computation
+- Using data-values instead of classes and IDs
+
+Although I have used many tutorials to complete this project, there is so much to learn. THE JOURNEY CONTINUES...
