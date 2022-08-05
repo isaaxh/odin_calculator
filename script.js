@@ -73,32 +73,74 @@ const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-all-clear]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand');
 const currentOperandTextElement = document.querySelector('[data-current-operand');
+let currentOperand = '';
+let previousOperand = '';
+let operation;
 
 
-const add = function (previousOperand, currentOperand) {
-    return previousOperand + currentOperand;
+function clear() {
+    previousOperandTextElement.innerText = '';
+    currentOperandTextElement.innerText = '';
+    operation = undefined;
+    currentOperand = '';
+    previousOperand = '';
 }
 
-const compute = function (previousOperand, currentOperand, operator) {
-    let computation;
-    const prev = parseFLoat(previousOperand);
-    const current = parseFLoat(currentOperand);
-    if(isNaN(prev) || isNaN(current)) return;
-    switch (operator) {
-        case '+':
-            computation = prev + current;
-            break;
-        case '-':
-            computation = prev -  current;
-            break;
-        case '*':
-            computation = prev * current;
-            break;
-        case '/':
-            computation = prev / current;
-            break;
-        default:
-            return;
-    }
-    
+function $delete() {
+
 }
+
+function appendNumber(number) {
+    currentOperand = currentOperand.toString() + number.toString();
+}
+
+// function compute(num1, num2, operator) {
+//     let computation;
+//     const prev = parseFLoat(num1);
+//     const current = parseFLoat(num2);
+//     if(isNaN(prev) || isNaN(current)) return;
+//     switch (operator) {
+//         case '+':
+//             computation = prev + current;
+//             break;
+//         case '-':
+//             computation = prev -  current;
+//             break;
+//         case '*':
+//             computation = prev * current;
+//             break;
+//         case '/':
+//             computation = prev / current;
+//             break;
+//         default:
+//             return;
+//     };
+//     currentOperand = computation;
+//     operation = undefined;
+//     previousOperand = ''; 
+
+// };
+
+function getDisplayNumber(number) {
+    const floatNumber = parseFloat(number);
+    if (isNaN(floatNumber)) return '';
+    return floatNumber.toLocaleString('en');
+}
+
+function updateDisplay() {
+    currentOperandTextElement.innerText = getDisplayNumber(currentOperand);
+
+}
+
+numberButtons.forEach(button => {
+    button.addEventListener('click',() => {
+        appendNumber(button.innerText);
+        updateDisplay();
+    });
+})
+
+allClearButton.addEventListener('click',() => {
+    clear();
+})
+
+window.onload = clear();
