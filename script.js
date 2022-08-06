@@ -77,6 +77,31 @@ function updateDisplay() {
 
 }
 
+function handleKeyboardInputs(e) {
+    if (e.key >= 0 && e.key <= 9 || e.key === '.') {
+        appendNumber(e.key)
+        updateDisplay()};
+    if (e.key === '=' || e.key === 'Enter') {
+        compute(previousOperand, currentOperand, operator);
+        updateDisplay();
+    };
+    if (e.key === 'Backspace') {
+        $delete();
+        updateDisplay();
+    };
+    if (e.key === 'Escape') {
+        clear();
+    };
+    if (e.key === '+' || e.key === '-' || e.key === '*') {
+        chooseOperation(e.key);
+        updateDisplay();
+    }
+    if (e.key === '/'){
+        chooseOperation('÷');
+        updateDisplay();
+    }
+};
+
 numberButtons.forEach(button => {
     button.addEventListener('click',() => {
         appendNumber(button.innerText);
@@ -105,6 +130,7 @@ deleteButton.addEventListener('click',() => {
     updateDisplay();
 })
 
+window.addEventListener('keydown', handleKeyboardInputs)
 
 
 window.onload = clear();
