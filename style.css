@@ -62,11 +62,16 @@ body {
 
 @media (max-width: 480px) {
     .calculator-grid {
-        grid-template-columns: repeat(4, 80px);
-        grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+        grid-template-columns: repeat(4, 90px);
+        grid-template-rows: minmax(120px, auto) repeat(5, 90px);
     }
 
     .calculator-grid > button:hover{
         background-color: white;
     }
+
+    .calculator-grid > button {
+        font-size: 1.5rem;
+    }
+    
 }
