@@ -11,5 +11,6 @@ What I have learned by completing this project:
 - How to use switch statement
 - How to code math computation
 - Using data-values instead of classes and IDs
+- How to add keyboad support
 
 Although I have used many tutorials to complete this project, there is so much to learn. THE JOURNEY CONTINUES...
